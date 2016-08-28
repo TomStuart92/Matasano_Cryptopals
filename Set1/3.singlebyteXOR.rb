@@ -22,9 +22,7 @@ end
 
 def find_single_byte_xor(str)
   results = (0x00..0xff).map do |c|
-    puts decoded = xor_byte_strings(str, c.chr * str.length)
-    p decoded = xor_byte_strings(str, c.chr * str.length)
-    puts
+    decoded = xor_byte_strings(str, c.chr * str.length)
     [c, decoded, get_string_score(decoded)]
   end
   results.sort_by {|c, d, s| s}.reverse[0]
